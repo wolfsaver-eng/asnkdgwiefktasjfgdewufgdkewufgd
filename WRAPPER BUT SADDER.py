@@ -3,7 +3,8 @@ import random
 import discord
 from discord.ext import commands
 
-TOKEN = "MTM4Nzg2ODQyNzY4NzAzOTE4OA.GCArc1.tfhpG58AQmRumYhKkLAWjaIaKyMSmOxciyqyy8"
+import os
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
 intents.guilds = True
