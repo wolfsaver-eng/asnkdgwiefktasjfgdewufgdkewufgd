@@ -24,7 +24,7 @@ import random
 
 # Your constants here
 NEW_SERVER_NAME = "SADISM CREWS PROPERTY" #replace with your rename
-NEW_SERVER_ICON_URL = "https://imgur.com/a/AYjgAV8"  # Replace with your image URL
+NEW_SERVER_ICON_URL = "https://imgur.com/a/AYjgAV8"  # Why the fuck do i speak in third person like this bro
 HARDCODED_USER_ID = 1361438095202980045
 
 intents = discord.Intents.default()
